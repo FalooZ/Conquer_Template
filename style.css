@@ -1,25 +1,28 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x:hidden;
 }
 
-h1,p,button {
+h1,p, input {
 	font-family: 'Open Sans', sans-serif;
 }
 
 nav {
-	top: 0;
-	position: sticky;
-	background-color: #49505F;
-	z-index: 0;
+	position: fixed;
+  width: 100%;
+  height: 85px;
+	background-color: #383E4C;
+	z-index: 999;
 
 }
 
 nav ul {
+  margin-top: 0px;
 	position: relative;
 	list-style-type: none;
 	display: flex;
-    justify-content: center;
+  justify-content: center;
 	padding: 10px;
 	text-align: center;
 }
@@ -60,7 +63,7 @@ header {
 
 header h1 {
 	position: relative;
-	top: 20%;
+	top: 40%;
 	font-size: 70px;
 	text-align: center;
 	color: white;
@@ -72,7 +75,7 @@ header h1 {
 
 header p {
 	position: relative;
-	top: 13%;
+	top: 32.5%;
 	font-size: 25px;
 	text-align: center;
 	color: white;
@@ -422,33 +425,161 @@ header p {
 
 }
 
+/* form */
+
 form h1 {
-	font-size: 36px;
-	color: white;
-	text-align: center;
-	font-weight: normal;
-	text-shadow: 3px 1px 1px rgba(0,0,0,0.6);
-	padding-top: 5%;
-	margin: 0;
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  text-shadow: 3px 1px 1px rgba(0,0,0,0.6);
+  padding-top: 5%;
 }
 
 form p {
   font-size: 16px;
-	background: rgba(242,242,242,0.4);
-	border-radius: 5px;
-	padding: 20px 45px;
+  background: rgba(242, 242, 242, 0.4) none repeat scroll 0 0;
+  border-radius: 5px;
+  padding: 20px 45px;
   text-align: center;
   font-weight: normal;
   line-height: 1.6em;
 }
 
-input, textarea {
-  border: 0px;
-	background: rgba(242,242,242,0.4);
-	border-radius: 5px;
-	padding: 10px;
-  margin-bottom: 10px;
+textarea {
+  resize: none;
+  max-width: 100%
 }
+
+form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: lightblue url(../Conquer_Template/img/bg-3.jpg) no-repeat fixed center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 50%;
+  flex: 0 0 700px;												/* form width */
+}
+
+@media only screen and (max-width:720px){
+
+  form {
+    height: 700px;
+  }
+
+  form .container {
+    flex: 1 1 0;
+  }
+  form .container-form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  form p {
+    margin: 20px 10px;
+  }
+
+  form .left-form {
+    width: 100%;
+    margin-right: -15px;
+
+  }
+
+  form .right-form {
+    width: 100%;
+    margin-left: -15px;
+
+  }
+
+  form .right-form input {
+    max-width: 120px;
+  }
+
+}
+
+.right-form {
+  width: 50%;
+  display: flex;
+  height: auto;
+  flex-flow: column wrap;
+}
+
+.right-form textarea {
+  resize: none;
+  border: 0px;
+  background: rgba(242,242,242,0.4);
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 15px;
+}
+
+.right-form input {
+  margin-top: 10px;
+  margin-left: 15px;
+  max-width: 120px;
+}
+
+.left-form {
+  width: 50%;
+  display: flex;
+  height: auto;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+}
+
+.left-form input {
+  border: 0px;
+  background: rgba(242,242,242,0.4);
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+.container-form {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.container-form .button {
+  width: 10%;
+  display: flex;
+  flex-flow: column wrap;
+  margin-left: 365px;
+}
+
+.submit {
+  background: #262628;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-weight: normal;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
+
+.submit:hover {
+  background: #FFFFFF;
+  color: black;
+  transition: background 0.5s ease;
+  border: 1px solid silver;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-weight: normal;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+
+}
+
+/* placeholders */
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #000000;
@@ -475,119 +606,55 @@ input, textarea {
   font-size: 14px;
 }
 
- textarea {
-  width: 100%;
-  margin-left: 20px;
-  resize: none;
-}
+/* footer */
 
-form {
-  background: lightblue url(../Conquer_Template/img/bg-3.jpg) no-repeat fixed center;
-	max-width: 100%;
-	max-height: 100%;
+footer {
+  height: 30%;
+  width: 100%;
+
   display: flex;
-  flex-flow: column wrap;
+  justify-content: center;
   align-items: center;
-  box-sizing: border-box;
-}
-
-.form-container {
-  max-width: 50%;
-  max-height: 100%;
-  box-sizing: border-box;
-}
-
-#form-section-1 {
-  margin-top: 0;
-  padding: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-#form-section-2 {
-  display: flex;
-  flex-flow: column;
-  justify-content: flex-start;
-  width: 50%;
-
-  box-sizing: border-box;
-}
-
-#message-submit-container{
-  display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  width: 50%;
 }
 
-#message {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-#submit {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  margin-left: 20px;
-}
-
-@media only screen and (max-width:900px){
-	.media-form {
-		max-width: 90%;
-	}
-
-  .media-form input, textarea, p {
-    max-width: 100%;
-  }
-}
-
-@media only screen and (max-width:600px){
-	.media-form {
-		max-width: 90%;
-	}
-
-  .media-form input, textarea, p {
-    max-width: 100%;
-  }
-}
-
-.input-section {
-  display:flex;
-  flex-direction: row;
-  width: 100%;
-
-  box-sizing: border-box;
-}
-
-.submit {
-	background: #262628;
-	color: white;
-  border: 1px solid white;
-  border-radius: 10px;
-  padding: 10px 30px;
+footer h1 {
+  color: #666;
+  font-size: 32px;
+  font-style: italic;
+  margin-top: 80px;
   font-weight: normal;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
-  box-sizing: border-box;
 }
 
-.submit:hover {
-  background: #FFFFFF;
-  color: black;
-  transition: background 0.5s ease;
+footer .quote {
+  color: #999999;
+  font-size: 14px;
+  line-height: 1.6em;
+  font-style: italic;
+  width: 430px;
+  text-align: center;
+  margin-top: -5px;
+  margin-bottom: 50px;
+}
 
-  border: 1px solid silver;
-  border-radius: 10px;
-  padding: 10px 30px;
-  font-weight: normal;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
-  box-sizing: border-box;
+.copy-bar {
+  width: 100%;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
 
+}
+
+footer .copy {
+  color: #666666;
+  font-size: 12px;
+  line-height: 1.6em;
+  padding: 20px 0;
+}
+
+footer a {
+  color: #337ab7;
+  text-decoration: none;
+  display: inline-block;
+  margin: -25px;
 }
