@@ -8,7 +8,6 @@ In this project, I am rewriting page template from this site:
 
 https://www.free-css.com/free-css-templates/page196/conquer
 
-The template is made using Bootstrap and JS. 
 I have made this site without any extensions, it is pure html and css, 
 because I am learning JS and don't know yet how to use JS and DOM properly.
 
