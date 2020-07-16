@@ -2,7 +2,7 @@
 
 Live demo:
 
-https://falooz.github.io/Conquer_Template/index.html
+https://w-kowalski.github.io/Conquer_Template/index.html
 
 In this project, I am rewriting page template from this site: 
 
